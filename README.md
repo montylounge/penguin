@@ -56,7 +56,14 @@ PhotoColor: #f7f7f7
 Here is where you write the content of your post.
 ```
 
-On the default list view (aka homepage, aka index.html) if the most recent post contains a Photo then the photo will display, otherwise no other items in the archive list will display a photo. Take a look at `article.html` to view the conditional logic. 
+On the default list view (aka homepage, aka index.<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+</body>
+</html>) if the most recent post contains a Photo then the photo will display, otherwise no other items in the archive list will display a photo. Take a look at `article.html` to view the conditional logic. 
 
 I have provided a `pelicanconf.py.example` file to get your configuration settings started. In this file there is one section you should pay specific attention to. These settings are custom Penguin theme values used to set values dynamically in the `base.html` template.
 
@@ -64,9 +71,10 @@ I have provided a `pelicanconf.py.example` file to get your configuration settin
 # BEGIN CUSTOM PENGUIN SETTINGS
 COMPANY_NAME = u'YOUR COMPANY NAME'
 COMPANY_URL = 'YOUR COMPANY URL'
-LOGO_URL = 'YOUR LOGO URL'
+LOGO_SRC = 'YOUR LOGO URL'
+LOGO_URL = "/"
 TWITTER_URL = 'YOUR TWITTER URL'
-BASE_META_DESCRIPTION = 'ACME SITE - Your description here.'
+BASE_META_DESCRIPTION = u'ACME SITE - Your description here.'
 # END CUSTOM PENGUIN SETTINGS
 ```
 
