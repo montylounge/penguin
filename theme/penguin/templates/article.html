@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+{% block title %}{{ article.title }} | {{ super() }}{% endblock %}
+{% block description %}{% endblock %}
+{% block content %}
+<section class="{{ article.type }}">
+  <article>
+    <header> 
+      <span class="post-date">{{ article.date|strftime('%B %Y') }}</span>
+      <h1 class="post-title">{{ article.title }}</h1>
+    </header>
+
+    {% if article.photocolor %}
+    <style>
+    .photo
+    {
+      background-color: {{ article.photocolor }};
+    }
+    </style>
+    {% endif %}
+
+    {% if article.photo %}
+    <div class="photo">
+      <div class="image">
+        <img src="/static/images/{{ article.photo }}">
+      </div>
+    </div>
+    {% endif %}
+
+    {% if article.caption %}
+    <div class="caption">
+      <p>{{ article.caption }}</p>
+    </div>
+    {% endif %}
+
+    <div class="post-content {{ article.type }}">
+
+    {% if article.type == "Screencast" %}
+      <p>{{ article.lead }}</p>
+
+      <div class="external-link screencast">
+        <a href="{{ article.link }}" target="_blank" class="button"><i class="icon-play-sign"></i>  Watch Video</a>
+      </div>
+    {% endif %}
+    
+    {{ article.content }}
+    </div>
+
+    {% if article.type == "Quote" %}
+    <div class="quote-attribution">
+      <p>{{ article.attribution }}</p>
+    </div>
+    {% endif %}
+
+    {% if article.type == "Bookmark" %}
+    <div class="external-link bookmark">
+      <a href="{{ article.link }}" target="_blank" class="button"><i class="icon-external-link-sign buttonIcon"></i>  Visit Bookmark</a>
+    </div>
+    {% endif %}
+
+
+  </article>
+</section>
+
+<!-- div class="more-content">
+  <a class="button" href="/">Enjoy more posts</a>
+</div -->
+
+{% endblock %}
+
+{% block extra_js %}
+    <script src="{{ SITEURL }}/theme/components/prism/js/prism.js"></script>
+{% endblock %}

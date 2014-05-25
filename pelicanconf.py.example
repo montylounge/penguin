@@ -1,0 +1,39 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*- #
+from __future__ import unicode_literals
+
+# BEGIN CUSTOM PENGUIN SETTINGS
+COMPANY_NAME = u'YOUR COMPANY NAME'
+COMPANY_URL = 'YOUR COMPANY URL'
+LOGO_SRC = 'YOUR LOGO URL'
+LOGO_URL = "/"
+TWITTER_URL = 'YOUR TWITTER URL'
+BASE_META_DESCRIPTION = u'ACME SITE - Your description here.'
+# END CUSTOM PENGUIN SETTINGS
+
+AUTHOR = u'YOUR NAME'
+SITENAME = u'SITE NAME'
+
+TIMEZONE = 'EST'
+
+DEFAULT_LANG = u'en'
+
+THEME = 'theme/penguin'
+THEME_STATIC_PATHS = ['static']
+CSS_FILE = 'custom/css/main.css'
+
+# Feed generation is usually not desired when developing
+FEED_ALL_ATOM = 'feeds/all.atom.xml'
+CATEGORY_FEED_ATOM = None
+TRANSLATION_FEED_ATOM = None
+ 
+ARTICLE_URL = '{date:%Y}/{date:%m}/{date:%d}/{slug}/'
+ARTICLE_SAVE_AS = '{date:%Y}/{date:%m}/{date:%d}/{slug}/index.html'
+CATEGORY_URL = 'category/{slug}/'
+CATEGORY_SAVE_AS = 'category/{slug}/index.html'
+TAG_URL = 'tag/{slug}/'
+TAG_SAVE_AS = 'tag/{slug}/index.html'
+AUTHOR_URL = 'author/{slug}/'
+AUTHOR_SAVE_AS = 'author/{slug}/index.html'
+
+DEFAULT_PAGINATION = 10

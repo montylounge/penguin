@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <title>{% block title %}{{ SITENAME }}{% endblock %}</title>
+        <meta charset="utf-8" /> 
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        {% block description %}
+        <meta name="description" content="{{ SITE_DESCRIPTION }}">
+        {% endblock %}
+
+        <link rel="shortcut icon" href="{{ SITEURL }}/theme/custom/img/favicon.ico" type="image/x-icon"/>
+
+        <link rel="stylesheet" href="{{ SITEURL }}/theme/components/bootstrap/css/bootstrap.min.css" type="text/css" />
+        <link rel="stylesheet" href="{{ SITEURL }}/theme/components/bootstrap/css/bootstrap-responsive.min.css" type="text/css" />
+        <link rel="stylesheet" href="{{ SITEURL }}/theme/components/font-awesome/css/font-awesome.min.css">
+        <link href='http://fonts.googleapis.com/css?family=Merriweather:400,700,400italic,300italic|Lato:400,700' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="{{ SITEURL }}/theme/components/prism/css/prism.css" type="text/css" />
+        <link rel="stylesheet" href="{{ SITEURL }}/theme/components/prism/css/prism-okaidia.css" type="text/css" />
+        <link rel="stylesheet" href="{{ SITEURL }}/theme/{{ CSS_FILE }}" type="text/css" />
+
+        {% if FEED_ALL_ATOM %}
+        <link href="{{ SITEURL }}/{{ FEED_ALL_ATOM }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} ATOM Feed">
+        {% endif %}
+</head>
+
+<body>
+<header>
+    <div class="new-header">
+        <div class="header-content center">
+       <a href="{{ LOGO_URL }}" class="logo"><img alt="{{ COMPANY_NAME }}" src="{{ LOGO_SRC }}" width="320"></a>
+       </div>
+    </div>
+</header>
+
+<div id="wrap">
+
+    {% block container %}
+    <div class="container" id="content">
+        <div class="row">
+            <div class="span8 center">
+                {% block content %}
+                {% endblock %}       
+            </div>
+        </div>
+    </div>
+    {% endblock %}
+</div>
+
+<footer>
+   <div class="footer">
+        <div class="footerContent center">
+            <a href="{{ TWITTER_URL }}" target="_blank"><span class="icon-twitter round whiteBG"></span>&nbsp;&nbsp;Catch me on Twitter</a>
+            <span class="legal">&copy; 2014 <a href="{{ COMPANY_URL }}">{{ COMPANY_NAME }}</a>
+                <br/>
+            Made with pride in <a href="http://www.njtechlist.com/companies/" target="_blank">New Jersey</a>.
+            </span>
+        </div>
+   </div>
+</footer>
+
+{% include 'analytics.html' %}
+
+{% block extra_js %}{% endblock %}
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% block content_title %}{% endblock %}
+
+    {% block container %}
+    <div class="container" id="content">
+        <div class="row">
+            <div class="span8 center">
+                 {% block content %}
+                 {% if articles %}
+                 {% for article in articles %}
+                     {% if loop.index == 1 %}
+                      <section>
+                             <aside class="featured">
+                                 <article>
+                                     <header> 
+                                         <span class="post-date">{{ article.date|strftime('%B %Y') }}</span>
+                                         <h1><a href="{{ SITEURL }}/{{ article.url
+                                         }}">{{ article.title }}</a></h1>
+
+                                        {% if article.photo %}
+                                        <div class="photo">
+                                          <div class="image">
+                                            <a href="{{ SITEURL }}/{{ article.url
+                                         }}" title="{{ article.title }}"><img src="/static/images/{{ article.photo }}"></a>
+                                          </div>
+                                        </div>
+                                        {% endif %}
+                                     </header>
+                                 </article>
+                             </aside>
+                         <!-- /#featured -->
+                         {% if loop.length  > 1 %}
+                             <hr />
+                             <ol class="post-list">
+                         {% endif %}
+                         {% else %}
+                                 <li>
+                                     <article class="post">
+                                         <span class="post-date">{{ article.date|strftime('%B %Y') }}</span>
+                                         <h1><a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title}}">{{ article.title }}</a></h1>
+                                     </article>
+                                 </li>
+                         {% endif %}
+                 {% endfor %}
+                             </ol>
+                     </section>
+                 {% endif %}
+                 {% endblock content %}      
+             </div>
+         </div>
+    </div>
+    {% endblock %}
+
+{% block extra_js %}    
+    <script src="{{ SITEURL }}/theme/components/prism/js/prism.js"></script>
+{% endblock %}
