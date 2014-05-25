@@ -42,7 +42,7 @@ Link: https://github.com/getpelican/pelican
 Here is where you write the content of your post.
 ```
 
-Each Post has an optional `Photo` meta attribute. Any Article with `photo` specified will display the photo as the first content element below the Article Date and Article Title. The attribute 'PhotoColor' is a horrible name because it actually sets the background-color of the element container for the photo. Example Article post with Photo and PhotoColor specified.
+Each Post has an optional `Photo` meta attribute. Any Article with `photo` specified will display the photo as the first content element below the Article Date and Article Title. The attribute 'PhotoBG' sets the background-color of the element container for the photo. Example Article post with Photo and PhotoColor specified.
 
 ```
 Title: Coding on the beach
@@ -51,7 +51,7 @@ Tags: claire
 Category: Beach
 Author: Joe Smith
 Photo: foo.jpg
-PhotoColor: #f7f7f7
+PhotoBG: #f7f7f7
 
 Here is where you write the content of your post.
 ```
